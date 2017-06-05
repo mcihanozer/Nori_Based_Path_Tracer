@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene>
+	<!-- 0: Spherical 1: Hemispherical 2: Cosine-wieighted	3: Surface area 4: Solid Angle	-->
+
+	<integrator type="phong">
+		<integer name="sample" value="1000"/>	
+		<float name="specularEx" value="500"/>
+	</integrator>
+	
+	<sampler type="independent">
+		<integer name="sampleCount" value="1"/>
+	</sampler>
+
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat origin="0.0, 3.0, 5.0" target="0.0, 0.0, 0.0" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="90"/>
+		<integer name="width" value="512"/>
+		<integer name="height" value="512"/>
+	</camera>
+
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="30, 30, 30"/>
+			<translate value="0, 60, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 1, 1"/>
+		</bsdf>
+		<boolean name="isLight" value="true"/>
+	</shape>
+	
+	<!-- <shape type="sphere">
+		<string name="objName" value="Sphere2"/>
+		<transform name="toWorld">
+			<scale value="0.7, 0.7, 0.7"/>
+			<translate value="-1.5, -0.3, -1"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0, 0"/>
+		</bsdf>
+		<float name="kd" value="0.7"/>
+	</shape>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere3"/>
+		<transform name="toWorld">
+			<scale value="0.6, 0.6, 0.6"/>
+			<translate value="1.5, -0.4, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0, 1, 0"/>
+		</bsdf>
+		<float name="kd" value="0.3"/>
+	</shape>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere4"/>
+		<transform name="toWorld">
+			<scale value="1, 1, 1"/>
+			<translate value="0.0, 0.0, -2.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0, 0, 1"/>
+		</bsdf>
+		<float name="kd" value="0.5"/>
+	</shape>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere4"/>
+		<transform name="toWorld">
+			<scale value="999, 999, 999"/>
+			<translate value="0.0, -1000.0, 2.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0.5, 1"/>
+		</bsdf>
+		<float name="kd" value="0.99"/>
+	</shape> -->
+	
+</scene>

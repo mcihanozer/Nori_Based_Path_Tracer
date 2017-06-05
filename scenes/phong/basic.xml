@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Manually converted from Mitsuba XML, originally from MDL -->
+
+<scene>
+	<!-- 0: Spherical 1: Hemispherical 2: Cosine-wieighted	3: Surface area 4: Solid Angle	-->
+
+	<integrator type="phong">
+		<integer name="sample" value="50"/>	
+		<float name="specularEx" value="1"/>
+	</integrator>
+	
+	<sampler type="independent">
+		<integer name="sampleCount" value="1"/>
+	</sampler>
+
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat origin="0, 300, 300" target="0, 0, 0" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="39.3077"/>
+		<integer name="width" value="512"/>
+		<integer name="height" value="512"/>
+	</camera>
+
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="20, 20, 20"/>
+			<translate value="-60, 0, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="3.14, 3.14, 3.14"/>
+		</bsdf>
+		<boolean name="isLight" value="true"/>
+		<integer name="id" value="1"/>
+	</shape>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="30, 30, 30"/>
+			<translate value="0, 0, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0, 0"/>
+		</bsdf>
+		<float name="kd" value="0.01"/>
+		<integer name="id" value="2"/>
+	</shape>
+	
+	
+</scene>

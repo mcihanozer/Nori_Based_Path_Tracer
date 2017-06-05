@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MI test scene from Eric Veach's thesis - modeled
+     after a file by Steve Marschner (CS667) -->
+
+<scene>
+	<integrator type="do">
+	</integrator>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="1"/>
+	</sampler>
+
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1, 1, 1"/>
+			<lookat origin="50, 52, 500" target="50, 51.957, 295" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="29.5"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+		<antialiasing type="stochastic">
+			<integer name="sampleCount" value="128"/>
+		</antialiasing>
+	</camera>
+	
+	<light type="directional">
+		<vector name="direction" value="-10, 4, -10"/>
+		<vector name="intensity" value="3.14, 3.14, 3.14"/>
+	</light>
+
+	<mesh type="obj">
+		<string name="filename" value="bunny.obj"/>
+		<transform name="toWorld">
+			<scale value="100, 100, 100"/>
+			<translate value="50, 0, 150"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.97, 0.91, 0.83"/>
+		</bsdf>
+	</mesh>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="40, 40, 40"/>
+			<translate value="50, 40, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.68, 0.10, 0.19"/>
+		</bsdf>
+	</shape>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="100000, 100000, 100000"/>
+			<translate value="80, -100000, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.53, 0.70, 0.08"/>
+		</bsdf>
+	</shape>
+
+</scene>

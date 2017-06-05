@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MI test scene from Eric Veach's thesis - modeled
+     after a file by Steve Marschner (CS667) -->
+
+<scene>
+	<integrator type="do">
+		<float name="length" value=".3"/>
+	</integrator>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="64"/>
+	</sampler>
+
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1, 1, 1"/>
+			<lookat origin="50, 52, 296" target="0, -0.043, -1" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="29.5"/>
+		<integer name="width" value="512"/>
+		<integer name="height" value="384"/>
+	</camera>
+	
+	<light type="directional">
+		<vector name="direction" value="-10, 4, 10"/>
+		<vector name="intensity" value="1, 1, 1"/>
+	</light>
+
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="1000000, 1000000, 1000000"/>
+			<translate value="80, -1000000, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.75, 0.75, 0.75"/>
+		</bsdf>
+	</shape>
+
+	<shape type="sphere">
+		<string name="objName" value="Sphere2"/>
+		<transform name="toWorld">
+			<scale value="40, 40, 40"/>
+			<translate value="50, 40, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.3, 0.5, 0.75"/>
+		</bsdf>
+	</shape>
+
+</scene>

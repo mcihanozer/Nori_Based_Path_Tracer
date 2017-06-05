@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MI test scene from Eric Veach's thesis - modeled
+     after a file by Steve Marschner (CS667) -->
+
+<scene>
+
+	<!-- 0: Sphere 	1: Hemisphere	2: Cosine -->
+
+	<integrator type="montecarlo">
+		<integer name="type" value="0"/>
+		<integer name="samples" value="100000"/>
+	</integrator>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="1"/>
+	</sampler>
+	
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1, 1, 1"/>
+			<lookat origin="50, 52, 600" target="0, 0, 0" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="29.5"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+		<antialiasing type="stochastic">
+			<integer name="sampleCount" value="1"/>
+		</antialiasing>
+	</camera>
+	
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="20, 20, 20"/>
+			<translate value="0, 80, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="3.14, 3.14, 3.14"/>
+		</bsdf>
+		<boolean name="isLight" value="true"/>
+	</shape>
+	
+	<mesh type="obj">
+		<string name="filename" value="plate1.obj"/>
+		<transform name="toWorld">
+			<scale value="5000, 1, 50000"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0, 0"/>
+		</bsdf>
+	</mesh>
+	
+	<!-- <shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="100000, 100000, 100000"/>
+			<translate value="80, -100000, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0, 0"/>
+		</bsdf>
+	</shape> -->
+
+</scene>

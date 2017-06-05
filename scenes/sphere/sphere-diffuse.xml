@@ -1,0 +1,46 @@
+<scene>
+	<integrator type="do">
+	</integrator>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="64"/>
+	</sampler>
+
+	<camera type="perspective">
+		<transform name="toWorld">
+			<scale value="-1, 1, 1"/>
+			<lookat origin="0, 0, 30" target="0, 0, 0" up="0, 1, 0"/>
+		</transform>
+		<float name="fov" value="29.5"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+	</camera>
+	
+	<light type="directional">
+		<vector name="direction" value="1, 1, 0"/>
+		<vector name="intensity" value="1, 1,1"/>
+	</light>
+
+	<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="1, 1, 1"/>
+			<translate value="0, 0, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1, 0, 0"/>
+		</bsdf>
+	</shape>
+	
+		<shape type="sphere">
+		<string name="objName" value="Sphere1"/>
+		<transform name="toWorld">
+			<scale value="100, 100, 100"/>
+			<translate value="0, -105, 0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0, 1, 0"/>
+		</bsdf>
+	</shape>
+
+</scene>
